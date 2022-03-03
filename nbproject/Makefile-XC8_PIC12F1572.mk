@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/device_config.c mcc_generated_files/pin_manager.c mcc_generated_files/mcc.c configuration_bits.c interrupts.c main.c system.c user.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/device_config.c mcc_generated_files/pin_manager.c mcc_generated_files/mcc.c configuration_bits.c interrupts.c main.c system.c user.c dist/XC8_PIC12F1572/debug/compiler_support.i dist/XC8_PIC12F1572/production/compiler_support.i dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.i dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.i
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/interrupts.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/user.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/configuration_bits.p1.d ${OBJECTDIR}/interrupts.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/system.p1.d ${OBJECTDIR}/user.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/interrupts.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/user.p1 ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/device_config.p1.d ${OBJECTDIR}/mcc_generated_files/pin_manager.p1.d ${OBJECTDIR}/mcc_generated_files/mcc.p1.d ${OBJECTDIR}/configuration_bits.p1.d ${OBJECTDIR}/interrupts.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/system.p1.d ${OBJECTDIR}/user.p1.d ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o.d ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o.d ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o.d ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/interrupts.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/user.p1
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/device_config.p1 ${OBJECTDIR}/mcc_generated_files/pin_manager.p1 ${OBJECTDIR}/mcc_generated_files/mcc.p1 ${OBJECTDIR}/configuration_bits.p1 ${OBJECTDIR}/interrupts.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/user.p1 ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o
 
 # Source Files
-SOURCEFILES=mcc_generated_files/device_config.c mcc_generated_files/pin_manager.c mcc_generated_files/mcc.c configuration_bits.c interrupts.c main.c system.c user.c
+SOURCEFILES=mcc_generated_files/device_config.c mcc_generated_files/pin_manager.c mcc_generated_files/mcc.c configuration_bits.c interrupts.c main.c system.c user.c dist/XC8_PIC12F1572/debug/compiler_support.i dist/XC8_PIC12F1572/production/compiler_support.i dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.i dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.i
 
 
 
@@ -158,6 +158,38 @@ ${OBJECTDIR}/user.p1: user.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/user.d ${OBJECTDIR}/user.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/user.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o: dist/XC8_PIC12F1572/debug/compiler_support.i  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/dist/XC8_PIC12F1572/debug" 
+	@${RM} ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o.d 
+	@${RM} ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_XC8_PIC12F1572=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o dist/XC8_PIC12F1572/debug/compiler_support.i 
+	@-${MV} ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.d ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o.d 
+	@${FIXDEPS} ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o: dist/XC8_PIC12F1572/production/compiler_support.i  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/dist/XC8_PIC12F1572/production" 
+	@${RM} ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o.d 
+	@${RM} ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_XC8_PIC12F1572=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o dist/XC8_PIC12F1572/production/compiler_support.i 
+	@-${MV} ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.d ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o.d 
+	@${FIXDEPS} ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o: dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.i  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug" 
+	@${RM} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o.d 
+	@${RM} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_XC8_PIC12F1572=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.i 
+	@-${MV} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.d ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o.d 
+	@${FIXDEPS} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o: dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.i  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production" 
+	@${RM} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o.d 
+	@${RM} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_XC8_PIC12F1572=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.i 
+	@-${MV} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.d ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o.d 
+	@${FIXDEPS} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/mcc_generated_files/device_config.p1: mcc_generated_files/device_config.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
@@ -222,6 +254,38 @@ ${OBJECTDIR}/user.p1: user.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_XC8_PIC12F1572=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/user.p1 user.c 
 	@-${MV} ${OBJECTDIR}/user.d ${OBJECTDIR}/user.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/user.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o: dist/XC8_PIC12F1572/debug/compiler_support.i  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/dist/XC8_PIC12F1572/debug" 
+	@${RM} ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o.d 
+	@${RM} ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_XC8_PIC12F1572=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o dist/XC8_PIC12F1572/debug/compiler_support.i 
+	@-${MV} ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.d ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o.d 
+	@${FIXDEPS} ${OBJECTDIR}/dist/XC8_PIC12F1572/debug/compiler_support.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o: dist/XC8_PIC12F1572/production/compiler_support.i  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/dist/XC8_PIC12F1572/production" 
+	@${RM} ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o.d 
+	@${RM} ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_XC8_PIC12F1572=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o dist/XC8_PIC12F1572/production/compiler_support.i 
+	@-${MV} ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.d ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o.d 
+	@${FIXDEPS} ${OBJECTDIR}/dist/XC8_PIC12F1572/production/compiler_support.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o: dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.i  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug" 
+	@${RM} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o.d 
+	@${RM} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_XC8_PIC12F1572=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.i 
+	@-${MV} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.d ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o.d 
+	@${FIXDEPS} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/debug/compiler_support.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o: dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.i  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production" 
+	@${RM} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o.d 
+	@${RM} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_XC8_PIC12F1572=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.i 
+	@-${MV} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.d ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o.d 
+	@${FIXDEPS} ${OBJECTDIR}/dist/SIMULATOR_of_XC8_PIC12F1572/production/compiler_support.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
